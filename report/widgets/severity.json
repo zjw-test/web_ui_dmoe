@@ -1,0 +1,1 @@
+[{"uid":"b9350ae663b385db","name":"test_user_home","time":{"start":1709902331785,"stop":1709902336630,"duration":4845},"status":"passed","severity":"normal"},{"uid":"2a4358c55ddc233b","name":"test_demo_user_management[查询 张 性]","time":{"start":1709902331965,"stop":1709902338352,"duration":6387},"status":"passed","severity":"normal"}]

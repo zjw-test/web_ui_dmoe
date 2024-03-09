@@ -1,14 +1,13 @@
 import logging
 import os
-import time
-
+import threading
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 from config import config_log, FILE_LOCATION
 import ddddocr
 
-new_path = FILE_LOCATION + os.sep + "scripts" + os.sep + 'captcha.png'
+FILE_LOCATION = FILE_LOCATION + os.sep + "scripts"
 config_log()
 
 
@@ -23,19 +22,19 @@ class DriverUtil:
             cls.__web_driver.implicitly_wait(5)
             cls.__web_driver.get("https://dugusoft.com/erp/index.jsp")
             cls.__web_driver.find_element(By.XPATH, '//*[@id="userName"]').send_keys("demo")
-            logging.info("hello ni ni")
             cls.__web_driver.find_element(By.XPATH, '//*[@id="userPwd"]').send_keys("123")
             captcha_element = cls.__web_driver.find_element(By.XPATH,
                                                             '//*[@id="account"]/ul/li[3]/div/table/tbody/tr/td[2]/img')
-            captcha_element.screenshot('captcha.png')
+            thread_id = threading.get_ident()
+            captcha_path = f"{FILE_LOCATION}/captcha_{thread_id}.png"
+            captcha_element.screenshot(captcha_path)
             ocr = ddddocr.DdddOcr()
-            with open(new_path, 'rb') as f:
+            with open(captcha_path, 'rb') as f:
                 img_bytes = f.read()
             res = ocr.classification(img_bytes)
             logging.info("识别出的验证码为" + res)
-            time.sleep(3)
             cls.__web_driver.find_element(By.XPATH, '//*[@id="txt_check"]').send_keys(res)
-            cls.__web_driver.find_element(By.XPATH, '//*[@id="btnSubmit"]').click()
+            os.remove(captcha_path)
         return cls.__web_driver
 
     @classmethod

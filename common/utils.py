@@ -3,9 +3,15 @@ import os
 import threading
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from config.confRead import Config
 
-from config import config_log, FILE_LOCATION
+from global_config import config_log, FILE_LOCATION
 import ddddocr
+
+config_instance = Config()
+host_address = config_instance.read_host()["host_address"]
+account = config_instance.read_user()["account"]
+password = config_instance.read_user()["password"]
 
 FILE_LOCATION = FILE_LOCATION + os.sep + "scripts"
 config_log()
@@ -20,9 +26,10 @@ class DriverUtil:
             cls.__web_driver = webdriver.Chrome()
             cls.__web_driver.maximize_window()
             cls.__web_driver.implicitly_wait(5)
-            cls.__web_driver.get("https://dugusoft.com/erp/index.jsp")
-            cls.__web_driver.find_element(By.XPATH, '//*[@id="userName"]').send_keys("demo")
-            cls.__web_driver.find_element(By.XPATH, '//*[@id="userPwd"]').send_keys("123")
+            # 打开指定网址
+            cls.__web_driver.get(host_address)
+            cls.__web_driver.find_element(By.XPATH, '//*[@id="userName"]').send_keys(account)
+            cls.__web_driver.find_element(By.XPATH, '//*[@id="userPwd"]').send_keys(password)
             captcha_element = cls.__web_driver.find_element(By.XPATH,
                                                             '//*[@id="account"]/ul/li[3]/div/table/tbody/tr/td[2]/img')
             thread_id = threading.get_ident()

@@ -1,7 +1,7 @@
 import json
 import os
 
-from config import FILE_LOCATION
+from global_config import FILE_LOCATION
 
 
 def read_json(filename, key):

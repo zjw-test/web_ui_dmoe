@@ -1,6 +1,0 @@
-[32mINFO    [0m root:utils.py:38 识别出的验证码为1033
-[32mINFO    [0m root:base_page.py:10 获取web_driver
-[32mINFO    [0m root:conftest.py:29 test_demo_user_login
-[32mINFO    [0m root:test_demo_user_management.py:17 开始搜索('张',)
-[32mINFO    [0m root:base_page.py:10 获取web_driver
-[32mINFO    [0m root:test_demo_user_management.py:19 test_demo_management

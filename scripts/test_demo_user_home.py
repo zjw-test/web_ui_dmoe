@@ -1,6 +1,6 @@
 import logging
 import pytest
-from config import config_log
+from global_config import config_log
 from page.demo_page import DemoProxy
 
 config_log()

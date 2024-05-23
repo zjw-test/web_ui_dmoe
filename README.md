@@ -7,29 +7,54 @@ web自动化测试框架
 PO模式三层分离架构
 
 
-#### 安装教程
+#### 目录结构
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+    |--web自动化测试框架 # 主目录
+       ├─ base # 封装等待元素，页面元素的基本操作方法
+       ├─ common # 常用工具
+         └─ render_template.py  # 渲染配置文件
+         └─ template.conf  # 模板文件
+         └─ env.json  # 使用的环境数据
+         └─ read_json.py  # 封装测试case数据读取
+         └─ utils  # 获取/推出 driver 工具
+       ├─ config # 配置文件读取
+         └─ config.ini  # 真正运行时的配置文件
+         └─ confRead.py   # 封装读取配置文件
+       ├─ data # 测试数据相关文件
+         └─ xxx.json #测试数据
+         └─ xxx.json #测试数据
+       ├─ log # 运行时日志
+         └─ xxx.log # 日志
+       ├─ page # 封装元素获取、操作、业务执行
+         └─ xxx.py # 模块封装文件
+       ├─ report # allure测试报告	
+       ├─ scripts # 测试脚本调用
+         └─ conftest.py # 运行用例前置、后置配置，生成allure报告
+         └─ test_xxx.py # 运行的用例
+       ├─ tmp # allure运行时数据、截图
+       ├─ global_config.py	  # 公用log日志封装
+       ├─ pytest.ini  	#pytest配置	  
+       └─ README.md
 
 #### 使用说明
 
-1.  多线程执行，命令行执行 pytest -n 2
+首先生成运行时的config配置文件
+```
+cd cd .\common\
+python render_template.py template.conf test_env.json ../config/config.ini
+```
 
-#### 参与贡献
+在项目根目录 多进程执行，命令行执行
+```
+pytest -n 2
+```
 
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
+单进程执行，注释掉 test_demo_user_home.py 以外test文件中 # @pytest.mark.usefixtures("demo_user_login")
+```
+pytest -v -m 'smoke'
+```
 
-
-#### 特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+在项目根目录 指定config配置文件执行
+```
+pytest --confcutdir=./config -v -m 'smoke'
+```

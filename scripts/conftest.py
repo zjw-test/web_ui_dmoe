@@ -1,3 +1,4 @@
+# -*- coding: UTF-8 -*-
 import logging
 import os
 import shutil
@@ -5,8 +6,10 @@ import shutil
 import pytest
 
 from common.utils import DriverUtil
-from global_config import FILE_LOCATION
+from global_config import FILE_LOCATION, config_log
 from page.demo_page import DemoProxy
+
+config_log()  # 全局配置日志
 
 
 def is_master():

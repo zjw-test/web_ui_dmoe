@@ -1,3 +1,4 @@
+# -*- coding: UTF-8 -*-
 import logging
 import os
 import threading
@@ -5,7 +6,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from config.confRead import Config
 
-from global_config import config_log, FILE_LOCATION
+from global_config import FILE_LOCATION
 import ddddocr
 
 config_instance = Config()
@@ -14,7 +15,6 @@ account = config_instance.read_user()["account"]
 password = config_instance.read_user()["password"]
 
 FILE_LOCATION = FILE_LOCATION + os.sep + "scripts"
-config_log()
 
 
 class DriverUtil:

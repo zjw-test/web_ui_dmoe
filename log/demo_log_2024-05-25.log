@@ -1,0 +1,18 @@
+2024-05-25 11:56:40,143 INFO [root] [conftest.py(pytest_sessionstart:28)] - 主节点会话开始：执行了清理任务
+2024-05-25 11:56:43,532 INFO [root] [utils.py(get_web_driver:42)] - 识别出的验证码为6459
+2024-05-25 11:56:43,613 INFO [root] [base_page.py(__init__:12)] - Web driver 初始化成功
+2024-05-25 11:56:43,758 INFO [root] [base_page.py(find_element:17)] - 找到元素: ('xpath', '//*[@id="btnSubmit"]')
+2024-05-25 11:56:44,442 INFO [root] [conftest.py(demo_user_login:34)] - test_demo_user_login
+2024-05-25 11:56:44,443 INFO [root] [base_page.py(__init__:12)] - Web driver 初始化成功
+2024-05-25 11:56:48,915 INFO [root] [test_demo_user_home.py(test_user_home:13)] - test_user_home
+2024-05-25 11:56:48,929 INFO [root] [test_demo_user_management.py(test_demo_user_management:15)] - 开始搜索('张',)
+2024-05-25 11:56:48,935 INFO [root] [base_page.py(__init__:12)] - Web driver 初始化成功
+2024-05-25 11:56:50,957 INFO [root] [base_page.py(find_element:17)] - 找到元素: ('xpath', '//*[contains(text(),"用户管理")]')
+2024-05-25 11:56:54,434 INFO [root] [base_page.py(find_element:17)] - 找到元素: ('xpath', '//*[@id="keyword"]')
+2024-05-25 11:56:54,505 INFO [root] [base_page.py(find_element:17)] - 找到元素: ('xpath', '//*[@id="keyword"]')
+2024-05-25 11:56:54,506 INFO [root] [base_page.py(input:36)] - 开始输入信息到元素: <selenium.webdriver.remote.webelement.WebElement (session="459f916a86199f23b3c35e388dadc363", element="f.D8472CE7FE2C69C7EAEA35C55BF06DA7.d.DA3344AD70086089A55732D5BC94C82A.e.56")>, 输入内容: ('张',)
+2024-05-25 11:56:54,577 INFO [root] [base_page.py(input:39)] - 输入完成: ('张',) 到元素: <selenium.webdriver.remote.webelement.WebElement (session="459f916a86199f23b3c35e388dadc363", element="f.D8472CE7FE2C69C7EAEA35C55BF06DA7.d.DA3344AD70086089A55732D5BC94C82A.e.56")>
+2024-05-25 11:56:54,589 INFO [root] [base_page.py(find_element:17)] - 找到元素: ('xpath', '//*[contains(text(),"立即搜索")]')
+2024-05-25 11:56:55,025 INFO [root] [test_demo_user_management.py(test_demo_user_management:17)] - test_demo_management
+2024-05-25 11:57:01,235 INFO [root] [conftest.py(pytest_sessionfinish:41)] - 会话结束：WebDriver已关闭
+2024-05-25 11:57:02,952 INFO [root] [conftest.py(pytest_sessionfinish:46)] - 会话结束：生成了Allure测试报告

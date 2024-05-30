@@ -36,6 +36,7 @@ python + pytest + selenium4 + parametrize + json + log + allure POM模式三层�
          └─ xxx.json # 运行的数据
          └─ xxx.png # 运行的截图
          └─ xxx.txt # 运行的数据
+       ├─ Dockerfile	  # dockerfile 镜像构建
        ├─ global_config.py	  # 公用log日志封装
        ├─ pytest.ini  	# pytest配置	  
        └─ README.md
@@ -60,3 +61,7 @@ pytest -n 2
 ```
 pytest -v -m 'smoke'
 ```
+
+docker 镜像构建，修改Dockerfile FROM 地址。在项目根目录 执行 
+
+```docker build -t test_ui_base .```

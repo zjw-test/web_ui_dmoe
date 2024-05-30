@@ -1,0 +1,1 @@
+{"uuid": "9c94f8d8-feec-4c1c-b854-eea4c3b4032e", "children": ["c6c34182-b9b2-4abc-8e4b-03f71dadb63e"], "befores": [{"name": "demo_user_login", "status": "passed", "attachments": [{"name": "登录截图", "source": "fec30994-0bb2-4275-b354-00405223a154-attachment.png", "type": "image/png"}], "start": 1717053484006, "stop": 1717053490310}], "start": 1717053484006, "stop": 1717053494821}

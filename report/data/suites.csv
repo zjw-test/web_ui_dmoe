@@ -1,3 +1,3 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Sat May 25 11:56:48 CST 2024","Sat May 25 11:56:55 CST 2024","6096","scripts","test_demo_user_management","TestDemoUserManagement","","","test_demo_user_management[查询 张 性]",""
-"passed","Sat May 25 11:56:44 CST 2024","Sat May 25 11:56:48 CST 2024","4472","scripts","test_demo_user_home","TestDemoUserHome","","","test_user_home",""
+"passed","Thu May 30 15:18:14 CST 2024","Thu May 30 15:18:21 CST 2024","6314","scripts","test_demo_user_management","TestDemoUserManagement","","","test_demo_user_management[查询 张 性]",""
+"passed","Thu May 30 15:18:10 CST 2024","Thu May 30 15:18:14 CST 2024","4510","scripts","test_demo_user_home","TestDemoUserHome","","","test_user_home",""
